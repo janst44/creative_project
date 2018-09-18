@@ -4,21 +4,21 @@
 <head>
 	<link href="Cube.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body background="BYU.jpg">
 
 
 <div class="scene">
   <div class="cube">
-    <div class="cube__face cube__face--front"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/4rghgblu7dM?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
-    <div class="cube__face cube__face--back"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/PgS_ncJquqM?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
-    <div class="cube__face cube__face--right"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/NxIILbNMTHY?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
-    <div class="cube__face cube__face--left"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/oY2nVQNlUB8?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
-    <div class="cube__face cube__face--top"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/eTezdMLJoyE?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
-    <div class="cube__face cube__face--bottom"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/rcLl0A-lXIc?autoplay=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--front"><iframe id="vid0" width="100%" height="100%" src="https://www.youtube.com/embed/4rghgblu7dM?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--back"><iframe id="vid1" width="100%" height="100%" src="https://www.youtube.com/embed/PgS_ncJquqM?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--right"><iframe id="vid2" width="100%" height="100%" src="https://www.youtube.com/embed/NxIILbNMTHY?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--left"><iframe id="vid3" width="100%" height="100%" src="https://www.youtube.com/embed/oY2nVQNlUB8?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--top"><iframe id="vid4" width="100%" height="100%" src="https://www.youtube.com/embed/eTezdMLJoyE?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
+    <div class="cube__face cube__face--bottom"><iframe id="vid5" width="100%" height="100%" src="https://www.youtube.com/embed/rcLl0A-lXIc?autoplay=1&enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></div>
   </div>
 </div>
-<p class="radio-group">
-  <label>
+<p class="radio-group" style="color:white;">
+  <label >
     <input type="radio" name="rotate-cube-side" value="front" checked /> front
   </label>
   <label>
@@ -39,6 +39,7 @@
 </p>
 
 <script type="text/javascript">
+
 var cube = document.querySelector('.cube');
 var radioGroup = document.querySelector('.radio-group');
 var currentClass = '';
@@ -46,17 +47,19 @@ var currentClass = '';
 function changeSide() {
   var checkedRadio = radioGroup.querySelector(':checked');
   var showClass = 'show-' + checkedRadio.value;
+
   if ( currentClass ) {
     cube.classList.remove( currentClass );
   }
   cube.classList.add( showClass );
   currentClass = showClass;
+
+  
 }
 // set initial side
 changeSide();
 
 radioGroup.addEventListener( 'change', changeSide );
-
 </script>
 </body>
 </html>
