@@ -53,3 +53,10 @@ f
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(400px); }
 
 label { margin-right: 10px; }
+
+
+.buttongroup {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
